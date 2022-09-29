@@ -1,13 +1,33 @@
-<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:email, "Email:")%> <br>
-  <%= email_field_tag(:email)%> <br>
-  <%= label_tag(:username, "Username:") %> <br>
-  <%= text_field_tag(:username) %> <br>
-  <%= label_tag(:password, "Password:") %> <br>
-  <%= password_field_tag(:password) %> <br>
-  <%= submit_tag("Submit") %>
+<%# Form using #form_with %>
+<%= form_with url: "/users" do |form| %>
+  <%= form.label :email, "Email:" %> <br>
+  <%= form.email_field :email, placeholder: "example@example.com"%> <br>
+  <%= form.label :username, "Username:" %> <br>
+  <%= form.text_field :username %> <br>
+  <%= form.label :password, "Password:" %> <br>
+  <%= form.password_field :password %> <br>
+  <%= form.submit "Submit" %>
 <% end %>
 
+
+<%# Form using #form_tag and helpers %>
+<%#= form_tag("/users", method: "post") do %>
+  <%#= label_tag(:email, "Email:")%> 
+  <%# <br> %>
+  <%#= email_field_tag(:email)%>
+  <%# <br> %>
+  <%#= label_tag(:username, "Username:") %>
+  <%# <br> %>
+  <%#= text_field_tag(:username) %>
+  <%# <br> %>
+  <%#= label_tag(:password, "Password:") %>
+  <%# <br> %>
+  <%#= password_field_tag(:password) %>
+  <%# <br> %>
+  <%#= submit_tag("Submit") %>
+<%# end %>
+
+<%# <br> %>
 <%# Form in HTML %>
 <%# <form action="/users" method="post" accept-charset="UTF-8">
     <label for="email">Email:</label><br>
