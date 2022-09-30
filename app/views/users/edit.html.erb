@@ -1,15 +1,23 @@
 <h1>Editing User</h1>
 
 <% if @user.errors.any? %>
+<ul>
+  <li><strong>Errors</strong></li>
   <% @user.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
+    <ul>
+      <li><%= message %></li>
+    </ul>
   <% end %>
+</ul>
 <% end %>
 
 <ul>
-  <li>ID: <%= @user.id %></li>
-  <li>Email: <%= @user.email %></li>
-  <li>Username: <%= @user.username %></li>
+  <li><strong>Editing user...</strong></li>
+  <ul>
+    <li>ID: <%= @user.id %></li>
+    <li>Email: <%= @user.email %></li>
+    <li>Username: <%= @user.username %></li>
+  </ul>
   <br>
 </ul>
 
